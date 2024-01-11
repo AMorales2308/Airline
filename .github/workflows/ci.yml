@@ -1,0 +1,12 @@
+name: Testing
+on: push
+
+jobs:
+  test_project:
+    runs-on: ubuntu-latest   # En cual maquina se va a correr. En este caso, Github tiene varias maquinas virtuales 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Django unit test
+      run:
+        pip3 install ---user django
+        python3 manage.py test
